@@ -24,6 +24,45 @@ img {
   margin-right: 10%;
 }
 
+.facts {
+  float: left;
+  width: 35%;
+  padding: 10;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-right-width: 12;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-color: #27A;
+  border-top-color: #49C;
+  margin-top: 30;
+  background-color: #333;
+  margin-left: -10;
+  color: #C8C8C8;
+}
+
+.recap{
+  padding-left: 40%;
+  margin-top: 75;
+}
+
+.facts2 {
+  float: right;
+  width: 35%;
+  padding: 10;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-left-width: 12;
+  border-top-width: 0;
+  border-color: #27A;
+  border-top-color: #49C;
+  margin-top: 30;
+  background-color: #333;
+  margin-right: -10;
+  color: #C8C8C8;
+}
+
 .img2{
   width:20%;
   height:auto;
@@ -32,10 +71,8 @@ img {
 }
 
 .img3{
-  width:30%;
-  height:auto;
-  margin-top: 50;
-  margin-right: 10%;
+  width:15%;
+  margin-left: 1%;
 }
 
 .navbar {
