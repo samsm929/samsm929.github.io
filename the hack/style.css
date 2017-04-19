@@ -1,0 +1,115 @@
+html{
+  background-color:#FFF2DD;
+  background-image:url(http://i68.tinypic.com/8zh53o.png);
+  //margin-top:5%;
+}
+
+#pineapple, #pineapple2{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0px !important;
+  outline: 0 !important;
+  margin-left:-10%;
+}
+
+#title {
+  font-family: Lucida Sans Unicode;
+  font-size: 545%;
+  left: 50%;
+  -webkit-text-fill-color: #CBEAA8;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+}
+
+#score {
+  font-family: Lucida Sans Unicode;
+  font-size: 245%;
+  left: 50%;
+  -webkit-text-fill-color: #CBEAA8;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+  float: left;
+  margin-top: 5%;
+}
+
+#rubberbandlevel, #ramnek, #cooldownred{
+  font-family: Lucida Sans Unicode;
+  font-size: 135%;
+  -webkit-text-fill-color: #666;
+  margin-left: 70%;
+}
+
+#rubberbandlevel {
+  margin-top:-18%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #CBEAA8;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  height: 115;
+  margin:-10;
+  margin-bottom: -35;
+}
+
+.rubberbanda, .ramneka, .cooldownreda {
+  float: left;
+  display: block;
+  color: #E6CF71;
+   -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #D5BE5F;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 45px;
+  font-family: Arial;
+  height: 26;
+  margin-left:10%;
+}
+
+#boost {
+  float: right;
+  margin-right:10%;
+  margin-top:-8%;
+  border: 0px !important;
+  outline: 0 !important;
+}
+
+#howBoost {
+  font-family: Lucida Sans Unicode;
+  font-size: 200%;
+  left: 50%;
+  -webkit-text-fill-color: #00A0E8;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+  margin-top:20%;
+}
+
+#timer {
+  position: absolute;
+  font-family: Lucida Sans Unicode;
+  font-size: 200%;
+  -webkit-text-fill-color: #666;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #666;
+  margin-left:92%;
+  margin-top:-8%;
+}
+
+#rate {
+  position: absolute;
+  font-family: Lucida Sans Unicode;
+  font-size: 180%;
+  -webkit-text-fill-color: #666;
+  margin-top:9%;
+  margin-left: 4%;
+}
