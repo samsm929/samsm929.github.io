@@ -1,0 +1,36 @@
+<html id="html">
+  <head>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <div class="navbar">
+     <a href="#rubberband" class="rubberbanda" onclick="rubberband();preventZoomCall(rubberbanda)">Rubber Band</a>
+     <a href="#ramnek" class="ramneka" onclick="ramnek(),preventZoomCall(ramneka)">Ramnek</a>
+     <a href="#cooldownred" class="cooldownreda" onclick="cooldownred();preventZoomCall(cooldownreda)">Cooldown Reduction</a>
+  </div>
+<body onload="perSec()">
+  <h1 id="title">Pineapple SMASH!</h1>
+  <div class="crush">
+    <input type="image" src="http://i68.tinypic.com/5n3kvt.png" id="pineapple" class="pineapple" onclick="animation(); preventZoomCall(pineapple);" style="z-index:2;"/>
+    <input type="image" src="http://i68.tinypic.com/5n3kvt.png" id="pineapple2" class="pineapple" style="z-index:1;"/>
+  </div>
+  <div class="boost">
+    <input type="image" src="http://i64.tinypic.com/3357190.jpg" id="boost" class="boost" onclick="boost();"/>
+    <p id="timer">0</p>
+  </div>
+  <p id="score"> </p>
+  <p id="rate"> </p>
+  <div id="levels">
+    <p id="howBoost"> </p>
+    <p id="rubberbandlevel"> </p>
+    <p id="ramnek"> </p>
+    <p id="cooldownred"> </p>
+  </div>
+  </body>
+  <script src="main.js"></script>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,191 @@
+html{
+  background-color:#FFF2DD;
+  background-image:url(http://i68.tinypic.com/8zh53o.png);
+}
+
+#pineapple, #pineapple2{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 0px !important;
+  outline: 0 !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  margin-left:-10%;
+}
+
+#title {
+  font-family: Lucida Sans Unicode;
+  font-size: 545%;
+  left: 50%;
+  -webkit-text-fill-color: #CBEAA8;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+}
+
+#score {
+  font-family: Lucida Sans Unicode;
+  font-size: 245%;
+  left: 50%;
+  -webkit-text-fill-color: #CBEAA8;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+  float: left;
+  margin-top: 5%;
+}
+
+#rubberbandlevel, #ramnek, #cooldownred{
+  font-family: Lucida Sans Unicode;
+  font-size: 125%;
+  -webkit-text-fill-color: #666;
+  margin-left: 70%;
+}
+
+#rubberbandlevel {
+  margin-top:-24%;
+}
+
+@media only screen and (max-height: 710px) {
+  #rubberbandlevel, #ramnek, #cooldownred {
+    font-size: 108%;
+  }
+  #rubberbandlevel {
+    margin-top: -20% !important;
+  }
+  #score{
+    font-size: 200%;
+  }
+  #rate {
+    font-size: 115% !important;
+    margin-top: 10% !important;
+  }
+  #howBoost {
+    font-size: 115% !important;
+    margin-top: 25% !important;
+  }
+  #boost {
+    margin-top: -10% !important;
+  }
+  .rubberbanda, .ramneka, .cooldownreda {
+    font-size: 33px !important;
+    height: 40 !important;
+  }
+  .rubberbanda {
+    margin-left: 5% !important;
+  }
+  .navbar {
+    height:100 !important;
+  }
+  html {
+    font-family: Arial;
+  }
+}
+
+@media only screen and (max-height: 642px) {
+  #rubberbandlevel, #ramnek, #cooldownred {
+    font-size: 75%;
+  }
+  #rubberbandlevel {
+    margin-top: -15% !important;
+  }
+  #score{
+    font-size: 200%;
+    margin-top: 0;
+  }
+  #howBoost {
+    font-size: 115% !important;
+    margin-top: 15% !important;
+  }
+  #rate {
+    font-size: 115% !important;
+    margin-top: 5% !important;
+  }
+  .rubberbanda, .ramneka, .cooldownreda {
+    font-size: 30px !important;
+  }
+  .navbar {
+    height:95 !important;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #boost {
+    width: 100;
+    margin-top: -10% !important;
+  }
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: none;
+  position: fixed;
+  bottom:0;
+  height: 100 !important;
+  width: 100%;
+  margin:-10;
+  margin-bottom: -25;
+}
+
+.rubberbanda, .ramneka, .cooldownreda {
+  float: left;
+  display: block;
+  color: #E6CF71;
+   -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #D5BE5F;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: Arial;
+  height: 45;
+  margin-left:10%;
+  border: 0px !important;
+  outline: 0 !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  background-color: rgba(204, 234, 155, 0.8);
+  border-radius: 35px;
+}
+
+#boost {
+  float: right;
+  margin-right:10%;
+  margin-top:-12%;
+  border: 0px !important;
+  outline: 0 !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+#howBoost {
+  font-family: Lucida Sans Unicode;
+  font-size: 200%;
+  left: 50%;
+  -webkit-text-fill-color: #00A0E8;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #666;
+  margin-left: 5%;
+  margin-top:20%;
+}
+
+#timer {
+  position: absolute;
+  font-family: Lucida Sans Unicode;
+  font-size: 200%;
+  -webkit-text-fill-color: #666;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #666;
+  margin-left:92%;
+  margin-top:-8%;
+}
+
+#rate {
+  position: absolute;
+  font-family: Lucida Sans Unicode;
+  font-size: 180%;
+  -webkit-text-fill-color: #666;
+  margin-top:9%;
+  margin-left: 4%;
+}
