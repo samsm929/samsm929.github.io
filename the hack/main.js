@@ -19,12 +19,15 @@ var cscale=1;
 var cnext=cscale+1;
 var cupgrades=0;
 var rate=0;
+var y=1;
 
-document.getElementById("score").innerHTML="$"+money;
-document.getElementById("rubberbandlevel").innerHTML="Rubber Band&emsp;&emsp;level: "+rbupgrades+"<br>&emsp;&emsp;$"+rbscale+" per click <br>&emsp;&emsp;Cost: $"+rbprice*rbscale+"<br>&emsp;&emsp;Next Upgrade: $"+rbnext +"/click";
-document.getElementById("ramnek").innerHTML="Ramnek&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;$"+rscale*2+" per second<br>&emsp;&emsp;Cost: $"+rprice*rscale+"<br>&emsp;&emsp;Next Upgrade: $"+rnext+"/sec";
-document.getElementById("howBoost").innerHTML="Boost<br>&emsp;x"+x;
-document.getElementById("cooldownred").innerHTML="Cooldown Reduction&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;"+Math.ceil(60/cscale)+" sec <br>&emsp;&emsp;Cost: $"+cprice*cscale+"<br>&emsp;&emsp;Next Upgrade: "+Math.ceil(60/cnext) +"sec";
+function setText() {
+  document.getElementById("score").innerHTML="$"+money;
+  document.getElementById("rubberbandlevel").innerHTML="Rubber Band&emsp;&emsp;level: "+rbupgrades+"<br>&emsp;&emsp;$"+rbscale+" per click <br>&emsp;&emsp;Cost: $"+rbprice*rbscale+"<br>&emsp;&emsp;Next Upgrade: $"+rbnext +"/click";
+  document.getElementById("ramnek").innerHTML="Ramnek&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;$"+rscale*2+" per second<br>&emsp;&emsp;Cost: $"+rprice*rscale+"<br>&emsp;&emsp;Next Upgrade: $"+rnext+"/sec";
+  document.getElementById("howBoost").innerHTML="Boost<br>&emsp;x"+x;
+  document.getElementById("cooldownred").innerHTML="Cooldown Reduction&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;"+Math.ceil(60/cscale)+" sec <br>&emsp;&emsp;Cost: $"+cprice*cscale*y+"<br>&emsp;&emsp;Next Upgrade: "+Math.ceil(60/cnext) +"sec";
+}
 
 function animation() {
     money+=rbscale;
@@ -37,7 +40,7 @@ function animation() {
 function perSec() {
 		setWidth();
     setInterval(function(){hi()}, 1000);
-    text("score: "+score,0, 0);
+    setInterval(function(){setText()}, 100);
 }
 
 function setWidth() {
@@ -48,14 +51,12 @@ function setWidth() {
      
 function rubberband() {
 	if(money>=rbprice*rbscale) {
-    rbprice*=rbscale/x;
-  	money-=rbprice*x;
+  	money-=rbprice*rbscale;
+  	rbprice+=2;
     rbupgrades++;
-    rbscale+=x*(1+Math.floor(rbupgrades/4));
-    rbnext=rbscale+x*(1+Math.floor(rbupgrades/4));
-    if(rbscale%4==0) {
-    	rbnext+=x;
-    }
+    rbscale+=x*2;
+    rbnext=rbscale+x*2;
+    hueShift("rubberbandlevel");
   }
   document.getElementById("score").innerHTML="$"+money;
   document.getElementById("rubberbandlevel").innerHTML="Rubber Band&emsp;&emsp;level: "+rbupgrades+"<br>&emsp;&emsp;$"+rbscale+" per click <br>&emsp;&emsp;Cost: $"+rbprice*rbscale+"<br>&emsp;&emsp;Next Upgrade: $"+rbnext +"/click";
@@ -64,15 +65,13 @@ function rubberband() {
 function ramnek() {
 	if(money>=rprice*rscale) {
 		clearInterval(interval);
-  	rprice*=rscale/x;
-    money-=rprice*x;
+    money-=rprice*rscale;
+    rprice+=2;
     rupgrades++;
-    rscale+=x*(1+Math.floor(rbupgrades/4));
-    rnext=2*(rscale+x*(1+Math.floor(rupgrades/4)));
-    if(rscale%4==0) {
-    	rnext+=2*x;
-    }
+    rscale+=x*6;
+    rnext=2*(rscale+x*6);
     interval=setInterval(function(){rAuto()}, 500/rscale);
+    hueShift("ramnek");
   }
   document.getElementById("score").innerHTML="$"+money;
   document.getElementById("ramnek").innerHTML="Ramnek&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;$"+rscale*2+" per second<br>&emsp;&emsp;Cost: $"+rprice*rscale+"<br>&emsp;&emsp;Next Upgrade: $"+rnext+"/sec";
@@ -110,10 +109,22 @@ function grow(element) {
     },1);
 }
 
+function hueShift(element) {
+    var w = 100;
+    var timer = setInterval(function () {
+        if (w >= 325){
+            clearInterval(timer);
+            w=100;
+            document.getElementById("rubberbandlevel").style.color = "rgb(100,100,100)";
+        }
+        document.getElementById(element).style.color = "rgb("+w+",100,100)";
+        w += 2;
+    },5);
+}
 
 function boost() {
 	if(offCool==true) {
-		x=Math.floor(Math.random()*5+2);
+		x=Math.floor(Math.random()*6+2);
 		rbscale*=x;
   	rscale*=x;
   	rbprice/=x;
@@ -130,7 +141,6 @@ function boost() {
   	offCool=false;
   	document.getElementById("boost").style.filter = "hue-rotate(150deg)";
   	document.getElementById("howBoost").style.filter = "hue-rotate(150deg)";
-    time=Math.ceil(60/cscale);
   }
 }
 
@@ -149,9 +159,9 @@ function boostEnd() {
   document.getElementById("score").innerHTML="$"+money;
 	document.getElementById("rubberbandlevel").innerHTML="Rubber Band&emsp;&emsp;level: "+rbupgrades+"<br>&emsp;&emsp;$"+rbscale+" per click <br>&emsp;&emsp;Cost: $"+rbprice*rbscale+"<br>&emsp;&emsp;Next Upgrade: $"+rbnext +"/click";
 	document.getElementById("ramnek").innerHTML="Ramnek&emsp;&emsp;level: "+rupgrades+"<br>&emsp;&emsp;$"+rscale*2+" per second<br>&emsp;&emsp;Cost: $"+rprice*rscale+"<br>&emsp;&emsp;Next Upgrade: $"+rnext+"/sec";
-  setTimeout("cooldown()", Math.ceil(61000/cscale));
+  setTimeout("cooldown()", Math.ceil(60000/cscale));
 	document.getElementById("howBoost").innerHTML="Boost<br>&emsp;x"+x;
-  time=Math.ceil(60/cscale);
+  time=Math.ceil(60/cscale-1);
   if(time<0) {
   	time=0;
   }
@@ -176,14 +186,16 @@ function timer() {
 }
      
 function cooldownred() {
-	if(money>=cprice*cscale) {
+	if(money>=cprice*cscale*y) {
   	money-=cprice*cscale;
     cscale++;
     cnext=cscale+1;
     cupgrades++;
+    y++;
+    hueShift("cooldownred");
   }
   document.getElementById("score").innerHTML="$"+money;
-  document.getElementById("cooldownred").innerHTML="Cooldown Reduction&emsp;&emsp;level: "+cupgrades+" <br>&emsp;&emsp;"+Math.ceil(60/cscale)+" sec <br>&emsp;&emsp;Cost: $"+cprice*cscale+"<br>&emsp;&emsp;Next Upgrade: "+Math.ceil(60/cnext) +"sec";
+  document.getElementById("cooldownred").innerHTML="Cooldown Reduction&emsp;&emsp;level: "+cupgrades+" <br>&emsp;&emsp;"+Math.ceil(60/cscale)+" sec <br>&emsp;&emsp;Cost: $"+cprice*cscale*y+"<br>&emsp;&emsp;Next Upgrade: "+Math.ceil(60/cnext) +"sec";
 }
 
 
