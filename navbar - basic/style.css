@@ -1,8 +1,11 @@
+body {
+    padding:0px;
+    margin: 0px;
+}
 nav {
     background-color: #49C;
     width:100%;
-    margin: -7px;
-    padding: 7px;
+    padding: 10px;
 }
 
 .navbutton {
@@ -14,5 +17,5 @@ nav {
 .pages {
     margin-top: 100px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 }
