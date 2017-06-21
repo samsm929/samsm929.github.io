@@ -1,0 +1,18 @@
+nav {
+    background-color: #49C;
+    width:110%;
+    margin: -7px;
+    padding: 10px;
+}
+
+.navbutton {
+    font-size: 30px;
+    font-family: Arial;
+    padding: 25px;
+}
+
+.pages {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 30px;
+}
