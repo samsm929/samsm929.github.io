@@ -1,0 +1,23 @@
+body {
+    padding:0px;
+    margin: 0px;
+}
+nav {
+    background-color: #49C;
+    width:100%;
+    padding: 10px;
+}
+
+.navbutton {
+    font-size: 30px;
+    font-family: Arial;
+    padding: 25px;
+    color:#336;
+    text-decoration: none;
+}
+
+.pages {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 25px;
+}
